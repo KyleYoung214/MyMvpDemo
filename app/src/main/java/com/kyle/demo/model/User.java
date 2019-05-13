@@ -6,8 +6,9 @@ import android.os.Parcelable;
 public class User implements Parcelable {
     public static final int STUDENT = 0;
     public static final int TEACHER = 1;
+    public static final int CODER = 2;
 
-    private static final int[] types = new int[]{STUDENT, TEACHER};
+    private static final int[] types = new int[]{STUDENT, TEACHER, CODER};
 
     private String name;
     private int age;

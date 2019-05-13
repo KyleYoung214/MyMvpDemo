@@ -45,23 +45,26 @@ public class UserAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             userVH.name.setText(userList.get(position).getName());
             userVH.age.setText(String.valueOf(userList.get(position).getAge()));
             userVH.desc.setText(userList.get(position).getDesc());
+
+            holder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Log.i(TAG, "position: " + position + "onClick: " + userList.get(position)
+                            .toString());
+
+                    userList.remove(position);
+                    notifyDataSetChanged();
+                }
+            });
         } else if (holder instanceof UserVH2) {
             UserVH2 userVH2 = (UserVH2) holder;
             userVH2.name.setText(userList.get(position).getName());
             userVH2.age.setText(String.valueOf(userList.get(position).getAge()));
             userVH2.desc.setText(userList.get(position).getDesc());
+        } else if (holder instanceof UserVH3) {
+            UserVH3 userVH3 = (UserVH3) holder;
         }
 
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Log.i(TAG, "position: " + position + "onClick: " + userList.get(position)
-                        .toString());
-
-                userList.remove(position);
-                notifyDataSetChanged();
-            }
-        });
 
     }
 
@@ -130,6 +133,43 @@ public class UserAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             name = view.findViewById(R.id.tv_user_name);
             age = view.findViewById(R.id.tv_user_age);
             desc = view.findViewById(R.id.tv_user_desc);
+
+            name.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                }
+            });
+
+            age.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                }
+            });
+
+            desc.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                }
+            });lalalala
+        }
+
+    }
+
+    static class UserVH3 extends RecyclerView.ViewHolder {
+        private TextView coder0;
+        private TextView coder1;
+        private TextView coder2;
+
+
+        public UserVH3(View view) {
+            super(view);
+
+            coder0 = view.findViewById(R.id.tv0);
+            coder1 = view.findViewById(R.id.tv1);
+            coder2 = view.findViewById(R.id.tv2);
         }
 
     }

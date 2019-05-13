@@ -1,8 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_red_light"
+        android:orientation="horizontal">
+
+        <com.androidkun.xtablayout.XTabLayout
+            android:id="@+id/x_tablayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:fadingEdgeLength="100dp"
+            android:requiresFadingEdge="horizontal"
+            app:xTabIndicatorWidth="20dp"
+            app:xTabMode="scrollable"
+            app:xTabSelectedTextColor="@android:color/white"
+            app:xTabSelectedTextSize="20sp"
+            app:xTabTextColor="@android:color/white"
+            app:xTabTextSelectedBold="true"
+            app:xTabTextSize="14sp" />
+
+        <ImageView
+            android:id="@+id/tab_types"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@mipmap/ic_launcher" />
+    </LinearLayout>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rv_user"
@@ -17,10 +50,31 @@
         android:onClick="onAddClick"
         android:text="Add User" />
 
+    <TextView
+        android:id="@+id/text_select"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="test select" />
+
     <Button
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:onClick="onClearClick"
         android:text="Clear User" />
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_test"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="5dp" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:onClick="onTestClick"
+        android:text="go to test Activityr" />
 
 </LinearLayout>
